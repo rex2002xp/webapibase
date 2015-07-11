@@ -2,6 +2,9 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using System;
+using WebApiBase.Services;
+using WebApiBase.Validators;
 
 namespace WebApiBase.Models.Identity
 {
@@ -25,6 +28,45 @@ namespace WebApiBase.Models.Identity
         {
             var appDbContext = context.Get<ApplicationDbContext>();
             var appUserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(appDbContext));
+
+            // Utilizamos la validacion personalizada.
+            appUserManager.UserValidator = new MyCustomUserValidator(appUserManager)
+            {
+                AllowOnlyAlphanumericUserNames = true,
+                RequireUniqueEmail = true
+            };
+
+            // Configuramos la validacion para el password
+            appUserManager.PasswordValidator = new PasswordValidator
+            {
+                RequiredLength = 6,
+                RequireNonLetterOrDigit = true,
+                RequireDigit = false,
+                RequireLowercase = true,
+                RequireUppercase = true
+            };
+
+            // Utilizamos la validacion personalizada para la contraseña.
+            appUserManager.PasswordValidator = new MyCustomPasswordValidator
+            {
+                RequiredLength = 6,
+                RequireNonLetterOrDigit = true,
+                RequireDigit = false,
+                RequireLowercase = true,
+                RequireUppercase = true
+            };
+
+            appUserManager.EmailService = new EmailService();
+
+            var dataProtectionProvider = options.DataProtectionProvider;
+            if (dataProtectionProvider != null)
+            {
+                appUserManager.UserTokenProvider =
+                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"))
+                    {
+                        TokenLifespan = TimeSpan.FromHours(6) // tiempo de vigencia del token generado que sera enviado por correo electronico.
+                    };
+            }
 
             return appUserManager;
         }
