@@ -14,6 +14,7 @@ namespace WebApiBase.Controllers.Identity
     /// <summary>
     /// Servicio para obtener informacion sobre los usuarios.
     /// </summary>
+    [Authorize(Roles="SuperAdmin, Admin")]
     [RoutePrefix("api/user")]
     public class UserController : IdentityApiController
     {
