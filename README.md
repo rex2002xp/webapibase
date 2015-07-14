@@ -28,8 +28,9 @@ Este proyecto nos permite arrancar la construccion de un api para nuestra aplica
 ### Identity Framework
 Tome en cuenta que se utiliza Identity Framework, y se aplico la traduccion al español de todos las tablas y sus campos, esto es una muestra de lo flexible que es utilizar este framework para manejar la informacion de los usuarios de la aplicacion.
 
-Las tablas se renombraron de la siguiente forma:
+### Mensajeria Json y XML
+Se soportan los 2 formatos para las respuetas y peticiones, pero se recomienda preferentemente el uso de json, en toda la documentacion se utiliza este formato.
 
 ### Version
-0.14.07.15.0
+0.15.07.0 Alpha
 
