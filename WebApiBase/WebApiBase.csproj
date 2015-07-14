@@ -139,9 +139,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Identity\IdentityApiController.cs" />
+    <Compile Include="Controllers\Identity\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Http\Request\Identity\ChangePasswordRequest.cs" />
+    <Compile Include="Http\Request\Identity\UserRequest.cs" />
+    <Compile Include="Http\Response\Identity\RoleResponse.cs" />
+    <Compile Include="Http\Response\Identity\UserResponse.cs" />
     <Compile Include="Migrations\201507110441238_Creacion-Tablas-Identity.cs" />
     <Compile Include="Migrations\201507110441238_Creacion-Tablas-Identity.Designer.cs">
       <DependentUpon>201507110441238_Creacion-Tablas-Identity.cs</DependentUpon>
@@ -152,6 +158,7 @@
     <Compile Include="Models\Identity\ApplicationRoleManager.cs" />
     <Compile Include="Models\Identity\ApplicationUser.cs" />
     <Compile Include="Models\Identity\ApplicationUserManager.cs" />
+    <Compile Include="Models\Identity\ModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\CustomJwtFormat.cs" />
     <Compile Include="Providers\CustomOAuthProvider.cs" />
@@ -171,7 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201507110441238_Creacion-Tablas-Identity.resx">
