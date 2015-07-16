@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 using WebApiBase.Interfaces;
 
 namespace WebApiBase.Http.Request.Identity
 {
-    /// <summary>
-    /// Peticion con la informacion del usuario.
-    /// </summary>
-    public class UserRequest : IUserIdentity
+    public class CreateUserRequest : IUserIdentity
     {
         /// <summary>
         /// Correo Electronico
@@ -40,11 +41,17 @@ namespace WebApiBase.Http.Request.Identity
         /// <summary>
         /// Numero Telefonico.
         /// </summary>
-        public  string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Level
         /// </summary>
         public byte Level { get; set; }
+
+        /// <summary>
+        /// Rol
+        /// </summary>
+        [Display(Name = "Role")]
+        public string RoleName { get; set; }
     }
 }

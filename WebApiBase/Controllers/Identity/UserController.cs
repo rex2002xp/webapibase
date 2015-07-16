@@ -56,14 +56,11 @@ namespace WebApiBase.Controllers.Identity
         public async Task<IHttpActionResult> GetUserByName(string username)
         {
             var user = await this.AppUserManager.FindByNameAsync(username);
-
             if (user != null)
             {
                 return Ok(this.TheModelFactory.Create(user));
             }
-
             return NotFound();
-
         }
 
         /// <summary>
@@ -72,7 +69,7 @@ namespace WebApiBase.Controllers.Identity
         /// <param name="UserRequest">Peticion con la informacion del usuario que se desea crear.</param>
         /// <returns></returns>
         [Route("create")]
-        public async Task<IHttpActionResult> CreateUser(UserRequest UserRequest)
+        public async Task<IHttpActionResult> CreateUser(UserCreateRequest UserRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -161,7 +158,7 @@ namespace WebApiBase.Controllers.Identity
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await this.AppUserManager.ChangePasswordAsync(User.Identity.GetUserId(), ChangePasswordRequest.OldPassword, ChangePasswordRequest.NewPassword);
+            IdentityResult result = await this.AppUserManager.ChangePasswordAsync(User.Identity.GetUserId(), ChangePasswordRequest.OldPassword, ChangePasswordRequest.Password);
 
             if (!result.Succeeded)
             {

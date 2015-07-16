@@ -1,12 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 using WebApiBase.Interfaces;
 
-namespace WebApiBase.Http.Request.Identity
+namespace WebApiBase.Controllers.Identity
 {
-    /// <summary>
-    /// Peticion con la informacion del usuario.
-    /// </summary>
-    public class UserRequest : IUserIdentity
+    public class UserCreateRequest : IUserIdentity , IPasswordIdentity
     {
         /// <summary>
         /// Correo Electronico
@@ -38,12 +39,31 @@ namespace WebApiBase.Http.Request.Identity
         public string LastName { get; set; }
 
         /// <summary>
-        /// Numero Telefonico.
+        /// Rol
         /// </summary>
-        public  string PhoneNumber { get; set; }
+        [Display(Name = "Role")]
+        public string RoleName { get; set; }
 
         /// <summary>
-        /// Level
+        /// Numero Telefonico.
+        /// </summary>
+        [Display(Name = "Telefono")]
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Password
+        /// </summary>
+        [Display(Name = "Password")]
+        public string Password { get ; set; }
+
+        /// <summary>
+        /// Confirmacion de Password
+        /// </summary>
+        [Display(Name = "Confirmacion de Password")]
+        public string ConfirmPassword { get; set; }
+
+        /// <summary>
+        /// Nivel de acceso
         /// </summary>
         public byte Level { get; set; }
     }

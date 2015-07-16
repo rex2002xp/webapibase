@@ -172,15 +172,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Identity\ProfileController.cs" />
     <Compile Include="Controllers\Identity\IdentityApiController.cs" />
     <Compile Include="Controllers\Identity\UserController.cs" />
+    <Compile Include="Controllers\Identity\UserCreateRequest.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Http\Request\Identity\ChangePasswordRequest.cs" />
+    <Compile Include="Http\Request\Identity\CreateUserRequest.cs" />
     <Compile Include="Http\Request\Identity\UserRequest.cs" />
     <Compile Include="Http\Response\Identity\RoleResponse.cs" />
     <Compile Include="Http\Response\Identity\UserResponse.cs" />
+    <Compile Include="Interfaces\IPasswordChangeIdentity.cs" />
+    <Compile Include="Interfaces\IPasswordIdentity.cs" />
+    <Compile Include="Interfaces\IUserIdentity.cs" />
     <Compile Include="Migrations\201507110441238_Creacion-Tablas-Identity.cs" />
     <Compile Include="Migrations\201507110441238_Creacion-Tablas-Identity.Designer.cs">
       <DependentUpon>201507110441238_Creacion-Tablas-Identity.cs</DependentUpon>
