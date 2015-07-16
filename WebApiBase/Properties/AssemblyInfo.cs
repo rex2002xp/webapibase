@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WebApiBase")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("WebApi Base")]
+[assembly: AssemblyDescription("Proyecto Base para la contruccion de servicios api")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("RexStudio")]
 [assembly: AssemblyProduct("WebApiBase")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
