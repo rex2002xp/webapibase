@@ -3,10 +3,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using System;
-using WebApiBase.Services;
-using WebApiBase.Validators;
+using RexStudioIdentity.Services;
+using RexStudioIdentity.Validators;
 
-namespace WebApiBase.Models.Identity
+namespace RexStudioIdentity.Models
 {
     /// <summary>
     /// Expone el api relacionado con los usuarios para guardar automatiacamente los cambios en el repositorio de Usuarios (UserStore).
@@ -70,5 +70,5 @@ namespace WebApiBase.Models.Identity
 
             return appUserManager;
         }
-    }    
+    }
 }

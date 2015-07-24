@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using RexStudioIdentity.Models;
 using System.Net.Http;
 using System.Web.Http;
-using WebApiBase.Models;
 using WebApiBase.Models.Identity;
 
 namespace WebApiBase.Controllers.Identity

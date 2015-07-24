@@ -1,13 +1,17 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using WebApiBase.Models.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WebApiBase.Models
+namespace RexStudioIdentity
 {
     /// <summary>
     /// Envuelve todos los objetos fuertemente tipados que nos permitiran personalizar la informacion de los usuarios , el mapa de  tablas de la base de datos 
     /// y las entidades relacionadas.
     /// </summary>
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<Models.ApplicationUser>
     {
         /// <summary>
         /// Constructor de la entidad ApplicationDbContext
@@ -33,25 +37,25 @@ namespace WebApiBase.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.Id).HasColumnName("Id").HasMaxLength(36);
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.UserName).HasColumnName("Usuario").HasMaxLength(50);
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.PhoneNumber).HasColumnName("Telefono").HasMaxLength(50);
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.PhoneNumberConfirmed).HasColumnName("TelefonoConfirmado");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.Email).HasColumnName("Email").HasMaxLength(100);
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.EmailConfirmed).HasColumnName("EmailConfirmado");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.TwoFactorEnabled).HasColumnName("DobleAutenticacion");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.AccessFailedCount).HasColumnName("TotalIntentosFallidos");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.LockoutEnabled).HasColumnName("BloqueoPermitido");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.LockoutEndDateUtc).HasColumnName("UltimoBloqueo");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.SecurityStamp).HasColumnName("TokenSeguridad");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.FirstName).HasColumnName("Nombres");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.LastName).HasColumnName("Apellidos");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.Level).HasColumnName("Nivel");
-            modelBuilder.Entity<ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.JoinDate).HasColumnName("FechaRegistro");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.Id).HasColumnName("Id").HasMaxLength(36);
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.UserName).HasColumnName("Usuario").HasMaxLength(50);
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.PhoneNumber).HasColumnName("Telefono").HasMaxLength(50);
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.PhoneNumberConfirmed).HasColumnName("TelefonoConfirmado");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.Email).HasColumnName("Email").HasMaxLength(100);
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.EmailConfirmed).HasColumnName("EmailConfirmado");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.TwoFactorEnabled).HasColumnName("DobleAutenticacion");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.AccessFailedCount).HasColumnName("TotalIntentosFallidos");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.LockoutEnabled).HasColumnName("BloqueoPermitido");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.LockoutEndDateUtc).HasColumnName("UltimoBloqueo");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.SecurityStamp).HasColumnName("TokenSeguridad");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.FirstName).HasColumnName("Nombres");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.LastName).HasColumnName("Apellidos");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.Level).HasColumnName("Nivel");
+            modelBuilder.Entity<Models.ApplicationUser>().ToTable("Usuarios", "dbo").Property(p => p.JoinDate).HasColumnName("FechaRegistro");
 
             modelBuilder.Entity<IdentityRole>().ToTable("Roles", "dbo").Property(p => p.Id).HasColumnName("Id").HasMaxLength(36);
             modelBuilder.Entity<IdentityRole>().ToTable("Roles", "dbo").Property(p => p.Name).HasColumnName("Nombre").HasMaxLength(50);
-            modelBuilder.Entity<ApplicationRole>().ToTable("Roles", "dbo").Property(p => p.Description).HasColumnName("Descripcion").HasMaxLength(200);
+            modelBuilder.Entity<Models.ApplicationRole>().ToTable("Roles", "dbo").Property(p => p.Description).HasColumnName("Descripcion").HasMaxLength(200);
 
             modelBuilder.Entity<IdentityUserRole>().ToTable("UsuariosRoles", "dbo").Property(p => p.RoleId).HasColumnName("RolId").HasMaxLength(36);
             modelBuilder.Entity<IdentityUserRole>().ToTable("UsuariosRoles", "dbo").Property(p => p.UserId).HasColumnName("UsuarioId").HasMaxLength(35);

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApiBase.Validators
+namespace RexStudioIdentity.Validators
 {
     /// <summary>
     /// Personalizacion de las validaciones que debe cumplir el password.

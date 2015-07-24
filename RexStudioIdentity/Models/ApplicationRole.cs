@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApiBase.Models.Identity
+namespace RexStudioIdentity.Models
 {
     /// <summary>
     /// Representa la entidad rol, se hereda de IdentityRole para poder tener los mismo atributos, pero a la vez podemos personalizar

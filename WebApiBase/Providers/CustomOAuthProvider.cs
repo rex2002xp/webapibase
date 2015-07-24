@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using RexStudioIdentity.Models;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using WebApiBase.Models.Identity;

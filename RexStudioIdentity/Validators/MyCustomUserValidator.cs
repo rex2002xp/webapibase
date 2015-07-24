@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNet.Identity;
+using RexStudioIdentity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
-using WebApiBase.Models.Identity;
 
-namespace WebApiBase.Validators
+namespace RexStudioIdentity.Validators
 {
     /// <summary>
     /// Personalizacion de las validaciones que debe cumplir el usuario.
@@ -28,7 +27,8 @@ namespace WebApiBase.Validators
         {
             IdentityResult result = await base.ValidateAsync(user);
             var emailDomain = user.Email.Split('@')[1];
-            if (!_allowedEmailDomains.Contains(emailDomain.ToLower()))            {
+            if (!_allowedEmailDomains.Contains(emailDomain.ToLower()))
+            {
                 var errors = result.Errors.ToList();
                 errors.Add(String.Format("Email domain '{0}' is not allowed", emailDomain));
                 result = new IdentityResult(errors);
