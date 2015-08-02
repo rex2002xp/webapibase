@@ -1,4 +1,4 @@
-namespace WebApiBase.Migrations
+namespace RexStudioIdentity.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

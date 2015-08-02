@@ -1,20 +1,19 @@
-namespace WebApiBase.Migrations
+namespace RexStudioIdentity.Migrations
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using RexStudioIdentity;
-    using RexStudioIdentity.Models;
+    using Models;
     using System;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<RexStudioIdentity.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ApplicationDbContext context)
+        protected override void Seed(RexStudioIdentity.ApplicationDbContext context)
         {
             /* Roles */
             var rolesManager = new RoleManager<ApplicationRole>(new RoleStore<ApplicationRole>(new ApplicationDbContext()));
