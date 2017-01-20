@@ -5,13 +5,13 @@ using Microsoft.Owin.Security.Jwt;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using Owin;
+using RexStudioIdentity;
+using RexStudioIdentity.Models;
 using System;
 using System.Configuration;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
-using WebApiBase.Models;
-using WebApiBase.Models.Identity;
 using WebApiBase.Providers;
 
 [assembly: OwinStartup(typeof(WebApiBase.Startup))]

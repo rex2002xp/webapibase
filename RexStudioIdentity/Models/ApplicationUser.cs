@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace WebApiBase.Models.Identity
+namespace RexStudioIdentity.Models
 {
     /// <summary>
     /// Representa la entidad Usuario, se hereda de IdentityUser para poder tener los mismo atributos, pero a la vez podemos personalizar la entidad

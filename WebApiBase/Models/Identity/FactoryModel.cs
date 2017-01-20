@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
+using RexStudioIdentity.Models;
 using System.Net.Http;
 using System.Web.Http.Routing;
 using WebApiBase.Http.Response.Identity;

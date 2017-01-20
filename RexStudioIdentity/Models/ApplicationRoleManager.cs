@@ -3,7 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 
-namespace WebApiBase.Models.Identity
+namespace RexStudioIdentity.Models
 {
     /// <summary>
     /// Expone el api relacionado con los roles para guardar automatiacamente los cambios en el repositorio de roles (RoleStore).
