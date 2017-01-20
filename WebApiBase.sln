@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BAC244
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RexStudioIdentity", "RexStudioIdentity\RexStudioIdentity.csproj", "{A738657F-590B-4A1A-8B04-D54E3247ED5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAngular2Base", "WebAngular2Base\WebAngular2Base.csproj", "{FD124AB5-299B-4738-9985-FF88ACF544FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{A738657F-590B-4A1A-8B04-D54E3247ED5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A738657F-590B-4A1A-8B04-D54E3247ED5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A738657F-590B-4A1A-8B04-D54E3247ED5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD124AB5-299B-4738-9985-FF88ACF544FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD124AB5-299B-4738-9985-FF88ACF544FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD124AB5-299B-4738-9985-FF88ACF544FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD124AB5-299B-4738-9985-FF88ACF544FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
