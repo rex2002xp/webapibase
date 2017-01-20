@@ -32,5 +32,5 @@ Tome en cuenta que se utiliza Identity Framework, y se aplico la traduccion al e
 Se soportan los 2 formatos para las respuetas y peticiones, pero se recomienda preferentemente el uso de json, en toda la documentacion se utiliza este formato.
 
 ### Version
-0.15.07.0 Alpha
+0.17.01.0 Beta
 
